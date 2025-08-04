@@ -31,7 +31,7 @@
   time.timeZone = "Asia/Manila";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_PH.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fil_PH";
@@ -40,9 +40,9 @@
     LC_MONETARY = "fil_PH";
     LC_NAME = "fil_PH";
     LC_NUMERIC = "fil_PH";
-    LC_PAPER = "fil_PH";
+    LC_PAPER = "en_US";
     LC_TELEPHONE = "fil_PH";
-    LC_TIME = "fil_PH";
+    LC_TIME = "en_US";
   };
 
   # XSERVER
@@ -107,16 +107,28 @@
     description = "Clarence Lubrin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+    	# Terminal CLI
 	git
 	vim
 	neovim
+	htop
+	btop
+	fastfetch
+
+	# Compilers
+	cmake
+	gcc
+	
+	# Applications
 	discord
 	steam
 	vscode
 	firefox
+	# Creative Applications
 	musescore
 	muse-sounds-manager
 	davinci-resolve
+
     ];
   };
 
