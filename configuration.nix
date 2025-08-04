@@ -14,6 +14,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # For steam proton support.
+  boot.supportedFilesystems = [ "fuse" ];
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -26,7 +28,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Set your time zone.
   time.timeZone = "Asia/Manila";
   
