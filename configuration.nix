@@ -28,7 +28,27 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  
+  # Enable dnsmasq
+  services.dnsmasq.enable = true;
+
+  # Set custom DNS servers that dnsmasq will forward to
+  services.dnsmasq.settings = {
+    server = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+    listen-address = "127.0.0.1";
+  };
+
+  # Prevent NetworkManager or other tools from overwriting resolv.conf
+  networking.useHostResolvConf = false;
+
+  # Create resolv.conf pointing to dnsmasq
+  environment.etc."resolv.conf".text = ''
+    nameserver 127.0.0.1
+  '';
+
   # Set your time zone.
   time.timeZone = "Asia/Manila";
   
