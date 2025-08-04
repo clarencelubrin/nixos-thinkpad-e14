@@ -64,10 +64,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-  ];
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "wayland";
+    MOZ_ENABLE_WAYLAND = "1";
+    GTK_USE_PORTAL = "1";
+    XDG_CURRENT_DESKTOP = "GNOME";
+  };
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
