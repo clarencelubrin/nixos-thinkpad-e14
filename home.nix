@@ -67,8 +67,13 @@
   #  /etc/profiles/per-user/lubrin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+     EDITOR = "nvim";
   };
+ 
+  # Enable GNOME Shell extensions
+  home.gnomeExtensions = with pkgs.gnome3; [
+    dashToDock
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
