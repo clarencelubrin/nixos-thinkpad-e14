@@ -103,13 +103,12 @@
     };
   };
 
-  firefox = {
-    name = "Firefox";
-    genericName = "Web Browser";
-    exec = "firefox %U";
+  xdg.desktopEntries.davinci-resolve = {
+    name = "DaVinci";
+    genericName = "Editor";
+    exec = "davinci-resolve %U";
     terminal = false;
-    categories = [ "Application" "Network" "WebBrowser" ];
-    mimeType = [ "text/html" "text/xml" ];
+    categories = [ "Application" ];
   };
 
   # Let Home Manager install and manage itself.
