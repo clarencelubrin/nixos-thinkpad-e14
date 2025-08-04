@@ -28,7 +28,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  
+  networking.networkmanager.dns = "none"; 
   # Enable dnsmasq
   services.dnsmasq.enable = true;
 
