@@ -63,7 +63,6 @@ in
 
   # Hardware Drivers
   services.xserver.videoDrivers = [ "modesetting" ];
-  hardware.cpu.intel.updateMicrocode = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -111,8 +110,13 @@ in
       '';
     };
   };
-  
-  # Ennable Gnome or Gtk themes via home-manager  
+
+  services.xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+  };
+
+  # Enable Gnome or Gtk themes via home-manager  
   programs.dconf.enable = true;
 
   environment.sessionVariables = {
