@@ -49,8 +49,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    "~/.local/share/applications/davinci-resolve.desktop" = {
-    text = ''
+    "~/.local/share/applications/davinci-resolve.desktop".text = ''
       [Desktop Entry]
       Name=DaVinci Resolve
       Exec=QT_QPA_PLATFORM=xcb QT_SCALE_FACTOR=1 davinci-resolve %U
