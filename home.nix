@@ -33,7 +33,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    (pkgs.writeShellScriptBin "resolve" ''
+    (pkgs.writeShellScriptBin "davinci-resolve" ''
       QT_QPA_PLATFORM=xcb QT_SCALE_FACTOR=1 davinci-resolve
     '') 
    pkgs.whitesur-icon-theme
