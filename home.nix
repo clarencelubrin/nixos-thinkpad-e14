@@ -14,16 +14,6 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  # Create a wrapper script for DaVinci Resolve
-  home.file."${pkgs.stdenv.shell}/bin/davinci-resolve" = {
-    text = ''
-      #!/bin/sh
-      export QT_QPA_PLATFORM=xcb
-      export QT_SCALE_FACTOR=1
-      /opt/resolve/bin/resolve
-    '';
-    executable = true;
-  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
