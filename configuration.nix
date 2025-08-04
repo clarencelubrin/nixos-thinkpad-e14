@@ -31,7 +31,7 @@
   time.timeZone = "Asia/Manila";
   
   i18n = {
-    defaultLocale = "en_US.UTF-8/UTF-8";
+    defaultLocale = "es_US.UTF-8";
 
     extraLocaleSettings = {
       LC_ADDRESS = "en_US";
