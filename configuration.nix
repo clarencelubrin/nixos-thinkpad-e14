@@ -159,6 +159,8 @@
 	vscode
 	steam
         firefox
+	obsidian
+
 	# Creative Applications
 	musescore
 	muse-sounds-manager
