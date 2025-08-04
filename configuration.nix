@@ -113,7 +113,11 @@ in
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    configPackages = [ pkgs.gnome.gnome-session ];
   };
 
   # Enable Gnome or Gtk themes via home-manager  
