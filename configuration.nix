@@ -170,7 +170,7 @@
   home-manager = {
      extraSpecialArgs = { inherit inputs; };
      users = {
-        "yurii" = import ./home.nix;
+        "clarencelubrin" = import ./home.nix;
      };
   };
   # Allow unfree packages
