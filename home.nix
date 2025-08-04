@@ -97,14 +97,12 @@
       # };
     };
   };
-  programs.gtk = {
-    enable = true;
-    iconTheme = {
-      name = "White Sur Icon Theme";  # Replace with your desired icon theme name
-      package = pkgs.whitesur-icon-theme;  # Replace with the actual package
-    };
-  };
 
+  programs.gtk.enable = true;
+  programs.gtk.iconTheme = {
+    name = "White Sur Icon Theme";
+    package = pkgs.whitesur-icon-theme;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
