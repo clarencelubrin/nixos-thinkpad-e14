@@ -151,6 +151,10 @@
 	steam
         firefox
 	obsidian
+        
+        # Media
+        qbittorrent
+	vlc
 
 	# Creative Applications
 	musescore
