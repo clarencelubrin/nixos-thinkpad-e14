@@ -167,6 +167,12 @@
     ];
   };
 
+  home-manager = {
+     specialargs = { inherit inputs; };
+     users = {
+        "yurii" = import ./home.nix;
+     };
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
