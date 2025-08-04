@@ -142,18 +142,6 @@
     description = "Clarence Lubrin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    	# Terminal CLI
-	git
-	vim
-	neovim
-	htop
-	btop
-	fastfetch
-
-	# Compilers
-	cmake
-	gcc
-	
 	# Applications
 	discord
 	vscode
@@ -169,12 +157,6 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -182,7 +164,18 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+     vim
+     nvim
+     wget
+     git
+     htop
+     btop
+     fastfetch
+
+     gnomeExtensions.blur-my-shell
+     gnomeExtensions.just-perfection
+     gnomeExtensions.arc-menu
+     gnomeExtensions.dash-to-dock
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
