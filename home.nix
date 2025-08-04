@@ -85,6 +85,7 @@
 
           # Alternatively, you can manually pass UUID as a string.
           "blur-my-shell@aunetx"
+          "dash-to-dock"
           # ...
         ];
       };
