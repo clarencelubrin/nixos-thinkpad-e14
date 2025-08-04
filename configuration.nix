@@ -169,6 +169,13 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.arc-menu
+    gnomeExtensions.dash-to-dock
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
