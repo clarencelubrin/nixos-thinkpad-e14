@@ -98,8 +98,8 @@
     };
   };
 
-  programs.gtk.enable = true;
-  programs.gtk.iconTheme = {
+  gtk.enable = true;
+  gtk.iconTheme = {
     name = "White Sur Icon Theme";
     package = pkgs.whitesur-icon-theme;
   };
