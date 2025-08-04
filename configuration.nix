@@ -60,6 +60,7 @@ in
 
   # Hardware Drivers
   services.xserver.videoDrivers = [ "modesetting" ];
+  hardware.cpu.intel.updateMicrocode = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -195,6 +196,7 @@ in
      btop
      fastfetch
      dig
+     systemd
 
      gnomeExtensions.blur-my-shell
      gnomeExtensions.just-perfection
