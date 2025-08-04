@@ -106,7 +106,7 @@
   xdg.desktopEntries.davinci-resolve = {
     name = "DaVinci";
     genericName = "Editor";
-    exec = "QT_QPA_PLATFORM=xcb davinci-resolve %U";
+    exec = "env QT_QPA_PLATFORM=xcb davinci-resolve %U";
     terminal = false;
     categories = [ "Application" ];
   };
