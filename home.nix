@@ -91,8 +91,8 @@
 
       # Configure individual extensions
       "org/gnome/shell/extensions/blur-my-shell" = {
-        brightness = 0.75;
-        noise-amount = 0;
+       # brightness = 0.75;
+       # noise-amount = 0;
       };
     };
   };
