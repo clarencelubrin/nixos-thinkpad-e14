@@ -33,7 +33,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    whitesur-icon-theme
+    pkgs.whitesur-icon-theme
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
