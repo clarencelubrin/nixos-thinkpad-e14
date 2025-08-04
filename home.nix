@@ -33,7 +33,10 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.whitesur-icon-theme
+    (pkgs.writeShellScriptBin "resolve" ''
+      QT_QPA_PLATFORM=xcb QT_SCALE_FACTOR=1 davinci-resolve
+    '') 
+   pkgs.whitesur-icon-theme
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
