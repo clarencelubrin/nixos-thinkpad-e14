@@ -50,7 +50,7 @@
   '';
 
   # Disable auto-start bluetooth.
-  services.bluetooth.enable = false;
+  hardware.bluetooth.enable = false;
 
   # Hardware Drivers
   services.xserver.videoDrivers = [ "modesetting" ];
@@ -174,6 +174,7 @@
      htop
      btop
      fastfetch
+     dig
 
      gnomeExtensions.blur-my-shell
      gnomeExtensions.just-perfection
