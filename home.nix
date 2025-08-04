@@ -57,7 +57,6 @@
       Type=Application
       Categories=Video;AudioVideo;
     '';
-    };
   };
 
   # Home Manager can also manage your environment variables through
