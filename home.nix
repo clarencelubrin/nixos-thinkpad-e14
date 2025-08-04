@@ -101,7 +101,7 @@
     enable = true;
     iconTheme = {
       name = "White Sur Icon Theme";  # Replace with your desired icon theme name
-      package = pkgs.Whitesur-icon-theme;  # Replace with the actual package
+      package = pkgs.whitesur-icon-theme;  # Replace with the actual package
     };
   };
 
