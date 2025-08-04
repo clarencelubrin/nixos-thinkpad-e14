@@ -33,6 +33,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    whitesur-icon-theme
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -76,7 +77,7 @@
     settings = {
       "org/gnome/desktop/interface" = {
 	  color-scheme = "prefer-dark";
-	  icon-theme = "Papirus";
+	  icon-theme = "WhiteSur";
       };
       "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
