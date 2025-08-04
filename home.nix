@@ -104,7 +104,7 @@
   };
   xdg.desktopEntries = {
     davinci-resolve = {
-    name = "DaVinci Resolve";
+    name = "bading";
     exec = "QT_QPA_PLATFORM=xcb QT_SCALE_FACTOR=1 davinci-resolve %U";
     icon = "resolve";  # Make sure this is the correct icon name from your icon theme
     type = "Application";
