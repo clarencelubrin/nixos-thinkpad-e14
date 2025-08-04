@@ -74,6 +74,7 @@
   dconf = {
     enable = true;
     settings = {
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
         enabled-extensions = [
@@ -96,12 +97,6 @@
       #   noise-amount = 0;
       # };
     };
-  };
-
-  gtk.enable = true;
-  gtk.iconTheme = {
-    name = "White Sur Icon Theme";
-    package = pkgs.whitesur-icon-theme;
   };
 
   # Let Home Manager install and manage itself.
