@@ -168,7 +168,7 @@
   };
 
   home-manager = {
-     specialargs = { inherit inputs; };
+     specialArgs = { inherit inputs; };
      users = {
         "yurii" = import ./home.nix;
      };
