@@ -195,7 +195,6 @@ in
      btop
      fastfetch
      dig
-     systemd
 
      gnomeExtensions.blur-my-shell
      gnomeExtensions.just-perfection
