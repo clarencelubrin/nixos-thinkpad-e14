@@ -117,7 +117,6 @@ in
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
-    configPackages = [ pkgs.gnome.gnome-session ];
   };
 
   # Enable Gnome or Gtk themes via home-manager  
