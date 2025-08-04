@@ -94,7 +94,10 @@
       extraGSettingsOverridePackages = [ pkgs.mutter ];
       extraGSettingsOverrides = ''
         [org.gnome.mutter]
-        experimental-features=['scale-monitor-framebuffer']
+        experimental-features=[
+          'scale-monitor-framebuffer'
+          'xwayland-native-scaling'
+        ]
       '';
     };
   };
