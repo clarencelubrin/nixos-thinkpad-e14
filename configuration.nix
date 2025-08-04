@@ -64,22 +64,6 @@
     };
   };
 
-  services.dbus.enable = true;
-
-  # Enable XDG Desktop Portal
-  xdg.portal = {
-    enable = true;
-
-    # Include the GTK portal backend
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-    # Make GTK apps use portals (important for sandboxed apps like Flatpak)
-    gtkUsePortal = true;
-
-    # Optional: explicitly use gtk backend if no desktop env like GNOME/KDE is used
-    defaultPortal = "gtk";
-  };
-
   environment.systemPackages = with pkgs; [
     xdg-desktop-portal
     xdg-desktop-portal-gtk
