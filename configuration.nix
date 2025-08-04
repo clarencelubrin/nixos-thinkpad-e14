@@ -31,6 +31,9 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  
+  # Disable waiting online after boot
+  systemd.services."NetworkManager-wait-online".enable = false;
 
   # Enable networking
   networking.networkmanager.enable = true;
