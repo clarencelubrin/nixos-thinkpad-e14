@@ -3,7 +3,10 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  # Ensure inputs is passed from specialArgs
+  inputs = config.specialArgs.inputs;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
