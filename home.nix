@@ -76,6 +76,7 @@
     settings = {
       "org/gnome/desktop/interface" = {
 	  color-scheme = "prefer-dark";
+	  icon-theme = "Papirus";
       };
       "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
