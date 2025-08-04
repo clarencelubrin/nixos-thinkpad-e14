@@ -49,6 +49,9 @@
     nameserver 127.0.0.1
   '';
 
+  # Disable auto-start bluetooth.
+  services.bluetooth.enable = false;
+
   # Hardware Drivers
   services.xserver.videoDrivers = [ "modesetting" ];
   hardware.graphics = {
