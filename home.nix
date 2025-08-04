@@ -102,15 +102,6 @@
       # };
     };
   };
-  xdg.desktopEntries = {
-    davinci-resolve = {
-    name = "DaVinci";
-    exec = "QT_QPA_PLATFORM=xcb QT_SCALE_FACTOR=1 davinci-resolve %U";
-    icon = "resolve";  # Make sure this is the correct icon name from your icon theme
-    type = "Application";
-    categories = [ "Video" "AudioVideo" ];
-    };
-  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
