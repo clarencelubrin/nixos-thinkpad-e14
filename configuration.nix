@@ -107,6 +107,9 @@ in
       '';
     };
   };
+  
+  # Ennable Gnome or Gtk themes via home-manager  
+  programs.dconf.enable = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
