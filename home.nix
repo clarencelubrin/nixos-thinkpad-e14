@@ -35,20 +35,20 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 	# Applications
-	discord
-	vscode
-	steam
-        firefox
-	obsidian
+	pkgs.discord
+	pkgs.vscode
+	pkgs.steam
+        pkgs.firefox
+	pkgs.obsidian
         
         # Media
-        qbittorrent
-	vlc
+        pkgs.qbittorrent
+	pkgs.vlc
 
 	# Creative Applications
-	musescore
-	muse-sounds-manager
-	davinci-resolve
+	pkgs.musescore
+	pkgs.muse-sounds-manager
+	pkgs.davinci-resolve
 
   ];
 
