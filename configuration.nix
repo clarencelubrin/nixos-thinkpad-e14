@@ -173,6 +173,7 @@
         "lubrin" = import ./home.nix;
      };
   };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
