@@ -33,22 +33,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    # Applications
-    pkgs.discord
-    pkgs.vscode
-    pkgs.steam
-    pkgs.firefox
-    pkgs.obsidian
-
-    # Media
-    pkgs.qbittorrent
-    pkgs.vlc
-
-    # Creative Applications
-    pkgs.musescore
-    pkgs.muse-sounds-manager
-    pkgs.davinci-resolve
-
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
