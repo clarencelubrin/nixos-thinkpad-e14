@@ -21,7 +21,7 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+ 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -49,6 +49,18 @@
     nameserver 127.0.0.1
   '';
 
+  # Hardware Drivers
+  services.xserver.videoDrivers = [ "modesetting" ];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
+      intel-compute-runtime 
+   ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
   # Set your time zone.
   time.timeZone = "Asia/Manila";
   
@@ -144,9 +156,9 @@
 	
 	# Applications
 	discord
-	steam
 	vscode
-	firefox
+	steam
+        firefox
 	# Creative Applications
 	musescore
 	muse-sounds-manager
