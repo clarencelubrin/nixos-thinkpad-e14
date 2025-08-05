@@ -36,6 +36,10 @@
     pkgs.whitesur-icon-theme
   ];
 
+  programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+  }
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -68,7 +72,7 @@
   #  /etc/profiles/per-user/lubrin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+  #    EDITOR = "nvim";
   };
  
   # Enable GNOME Shell extensions
