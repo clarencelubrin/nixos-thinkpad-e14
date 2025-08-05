@@ -33,13 +33,16 @@
     # Applications
     discord
     vscode
+    eclipse-java
     steam
     firefox
     obsidian
-
+    cryptomator
+    
     # Media
     qbittorrent
     vlc
+
     # Creative Applications
     musescore
     muse-sounds-manager
