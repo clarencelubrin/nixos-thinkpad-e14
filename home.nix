@@ -104,10 +104,10 @@
   };
 
   xdg.desktopEntries.davinci-resolve = {
-    name = "DaVinci";
+    name = "DaVinci Resolve";
     genericName = "Editor";
     exec = "env QT_QPA_PLATFORM=xcb davinci-resolve %U";
-    icon = resolve;
+    icon = DV_Resolve;
     terminal = false;
     categories = [ "Application" ];
   };
