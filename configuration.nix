@@ -218,8 +218,14 @@ in
 
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
+    
+    (nerdfonts.override { fonts = [ "MesloLGS" ]; })
   ];
 
+  # Fonts.
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "MesloLGS" ]; })
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
