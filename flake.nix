@@ -24,7 +24,8 @@
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         modules = [
-          inherit specialArgs;           # <- this will make inputs available anywhere in the NixOS configuration
+          specialArgs = { inherit system inputs; };
+	  # inherit specialArgs;           # <- this will make inputs available anywhere in the NixOS configuration
           ./configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
