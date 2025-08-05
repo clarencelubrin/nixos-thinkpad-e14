@@ -59,9 +59,6 @@
     # '';
     ".config/nvim".source = builtins.fetchGit {
       url = "https://github.com/NvChad/NvChad.git";
-      rev = "6fb5c313edc966f187c7483a16affaec0518b641"; # Or latest stable tag
-    # If you want the absolute latest version:
-    # leave out rev, but beware of instability
     };
   };
 
