@@ -181,7 +181,6 @@ in
 
   home-manager = {
      extraSpecialArgs = { inherit inputs; };
-     nixpkgs.config.allowUnfree = true;
      users = {
         "lubrin" = import ./home.nix;
      };
