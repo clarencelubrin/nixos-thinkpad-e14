@@ -34,6 +34,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.whitesur-icon-theme
+    pkgs.bibata-cursors
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,6 +79,7 @@
       "org/gnome/desktop/interface" = {
 	  color-scheme = "prefer-dark";
 	  icon-theme = "WhiteSur";
+	  cursor = "bibata-cursors";
       };
       "org/gnome/desktop/wm/preferences" = {
           button-layout = "appmenu:minimize,maximize,close";
