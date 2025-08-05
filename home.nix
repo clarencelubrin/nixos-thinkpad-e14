@@ -79,6 +79,9 @@
 	  color-scheme = "prefer-dark";
 	  icon-theme = "WhiteSur";
       };
+      "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
+      };
       "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
         enabled-extensions = [
