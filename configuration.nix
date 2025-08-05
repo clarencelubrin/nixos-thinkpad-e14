@@ -177,28 +177,11 @@ in
     isNormalUser = true;
     description = "Clarence Lubrin";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-	# Applications
-	discord
-	vscode
-	steam
-        firefox
-	obsidian
-        
-        # Media
-        qbittorrent
-	vlc
-
-	# Creative Applications
-	musescore
-	muse-sounds-manager
-	davinci-resolve
-
-    ];
   };
 
   home-manager = {
      extraSpecialArgs = { inherit inputs; };
+     nixpkgs.config.allowUnfree = true;
      users = {
         "lubrin" = import ./home.nix;
      };
