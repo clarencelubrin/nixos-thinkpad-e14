@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
+  imports = [
+    inputs.nix4nvchad.homeManagerModule
+  ];
+    # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "lubrin";
   home.homeDirectory = "/home/lubrin";
@@ -127,6 +130,23 @@
     mimeType = [ "application/x-resolve-project" ]; # Optional, use actual MIME types if needed
     startupNotify = true;
   };
+  programs.nvchad = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nodePackages.bash-language-server
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
+      emmet-language-server
+      nixd
+      (python3.withPackages(ps: with ps; [
+        python-lsp-server
+        flake8
+      ]))
+    ];
+    hm-activation = true;
+    backup = true;
+  };
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
