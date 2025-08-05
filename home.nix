@@ -39,7 +39,6 @@
     # Media
     qbittorrent
     vlc
-
     # Creative Applications
     musescore
     muse-sounds-manager
