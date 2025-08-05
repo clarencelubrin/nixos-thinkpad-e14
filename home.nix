@@ -1,8 +1,6 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
+
 {
-  imports = [
-    inputs.nix4nvchad.homeManagerModule
-  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "lubrin";

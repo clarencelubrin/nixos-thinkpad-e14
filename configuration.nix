@@ -182,12 +182,19 @@ in
   };
 
   home-manager = {
-    # extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; };
     users = {
       "lubrin" = import ./home.nix;
     };
   };
 
+  nixpkgs = { 
+    overlays = [
+      (final: prev: {
+        nvchad = inputs.nix4nvchad.packages."${pkgs.system}".nvchad;
+      })
+    ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -213,6 +220,7 @@ in
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
   ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
