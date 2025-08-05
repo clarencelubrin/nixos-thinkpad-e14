@@ -234,6 +234,7 @@ in
     # Formatting and Language Server for Nix
     nixpkgs-fmt
     nixd
+    nvchad
 
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
