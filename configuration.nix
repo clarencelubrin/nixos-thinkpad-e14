@@ -88,7 +88,7 @@ in
   security.pam.services.gdm.enableGnomeKeyring = true;
   security.pam.services.gdm.fprintAuth = true;
 
-  security.pam.services.login.fprintAuth = true;
+  # security.pam.services.login.fprintAuth = true;
   security.pam.services.sudo.fprintAuth = true;
 
 
