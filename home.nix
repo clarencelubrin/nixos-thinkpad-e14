@@ -57,11 +57,6 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/nvim".source = builtins.fetchGit {
-      url = "https://github.com/NvChad/NvChad.git";
-      rev = "1e51b1d27cfb3d8a7fa8851e3260a44cf94cbfb2"; # Tag v2.5 commit SHA
-    };
-
   };
 
   # Home Manager can also manage your environment variables through
