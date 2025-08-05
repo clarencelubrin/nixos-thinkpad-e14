@@ -25,6 +25,7 @@ in
 
   # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
