@@ -107,7 +107,7 @@
     name = "DaVinci Resolve";
     genericName = "Editor";
     exec = "env QT_QPA_PLATFORM=xcb davinci-resolve %U";
-    icon = DV_Resolve;
+    icon = "resolve";
     terminal = false;
     categories = [ "Application" ];
   };
