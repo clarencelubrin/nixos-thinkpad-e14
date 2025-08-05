@@ -19,7 +19,7 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       extraSpecialArgs = { inherit system inputs; };  # <- passing inputs to the attribute set for home-manager
-      specialArgs = { inherit system inputs; };       # <- passing inputs to the attribute set for NixOS (optional)
+      # specialArgs = { inherit system inputs; };       # <- passing inputs to the attribute set for NixOS (optional)
     in {
     nixosConfigurations = {
       nixos = lib.nixosSystem {
@@ -28,7 +28,8 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
-              inherit extraSpecialArgs;  # <- this will make inputs available anywhere in the HM configuration
+	      extraSpecialArgs = { inherit system inputs; };
+              # inherit specialArgs;  # <- this will make inputs available anywhere in the HM configuration
               useGlobalPkgs = true;
               useUserPackages = true;
               users.lubrin = import ./home.nix;

@@ -181,12 +181,12 @@ in
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "lubrin" = import ./home.nix;
-    };
-  };
+#  home-manager = {
+#    extraSpecialArgs = { inherit inputs; };
+#    users = {
+#      "lubrin" = import ./home.nix;
+#    };
+#  };
 
   nixpkgs = { 
     overlays = [
