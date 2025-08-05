@@ -200,7 +200,8 @@ in
      dig
      systemd
      desktop-file-utils
-     
+     usbutils
+
      gnomeExtensions.blur-my-shell
      gnomeExtensions.just-perfection
      gnomeExtensions.arc-menu
