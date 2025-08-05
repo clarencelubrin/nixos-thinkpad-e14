@@ -20,7 +20,7 @@
     # it's a better practice than "default" shown in the video
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       # specialArgs = {inherit inputs;};
-      specialArgs = { inherit nix4nvchad; };
+      specialArgs = { inherit inputs.nix4nvchad; };
       modules = [
         ./configuration.nix
         # inputs.home-manager.nixosModules.default
