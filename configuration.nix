@@ -12,7 +12,6 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-       inputs.nix4nvchad.homeManagerModule
     ];
 
   # Bootloader.
