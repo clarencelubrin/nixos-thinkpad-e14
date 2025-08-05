@@ -79,7 +79,7 @@
       "org/gnome/desktop/interface" = {
 	  color-scheme = "prefer-dark";
 	  icon-theme = "WhiteSur";
-	  cursor = "bibata-cursors";
+	  cursor-theme = "bibata-cursors";
       };
       "org/gnome/desktop/wm/preferences" = {
           button-layout = "appmenu:minimize,maximize,close";
