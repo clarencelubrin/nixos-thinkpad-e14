@@ -59,7 +59,7 @@
     # '';
     ".config/nvim".source = builtins.fetchGit {
       url = "https://github.com/NvChad/NvChad.git";
-      rev = "6fb5c313edc966f187c7483a16affaec0518b641";
+      rev = "1e51b1d27cfb3d8a7fa8851e3260a44cf94cbfb2"; # Tag v2.5 commit SHA
     };
 
   };
