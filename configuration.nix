@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   # Ensure inputs is passed from specialArgs
   inputs = config.specialArgs.inputs;
@@ -186,6 +186,14 @@ in
     users = {
       "lubrin" = import ./home.nix;
     };
+  };
+
+  nixpkgs = { 
+    overlays = [
+      (final: prev: {
+        nvchad = inputs.nix4nvchad.packages."${pkgs.system}".nvchad;
+      })
+    ];
   };
 
   # Allow unfree packages
