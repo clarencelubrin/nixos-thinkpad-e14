@@ -74,18 +74,22 @@ in
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
-  # Fingerprint
+  # Fingerprint.
   systemd.services.fprintd = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig.Type = "simple";
   };
 
-  # Install the driver
   services.fprintd.enable = true;
-  # If simply enabling fprintd is not enough, try enabling fprintd.tod...
   services.fprintd.tod.enable = true;
-  # ...and use one of the next four drivers
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
+  
+  # Enable log-in with fingerprint.
+  security.pam.services.gdm.enableGnomeKeyring = true;
+  security.pam.services.gdm.fprintAuth = true;
+
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
 
 
   # Set your time zone.
