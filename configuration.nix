@@ -9,7 +9,8 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -27,17 +28,17 @@ in
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
- 
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  
+
   # Disable waiting online after boot
   systemd.services."NetworkManager-wait-online".enable = false;
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none"; 
+  networking.networkmanager.dns = "none";
   # Enable dnsmasq
   services.dnsmasq.enable = true;
 
@@ -69,8 +70,8 @@ in
     extraPackages = with pkgs; [
       intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
       intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
-      intel-compute-runtime 
-   ];
+      intel-compute-runtime
+    ];
   };
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
@@ -83,7 +84,7 @@ in
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
-  
+
   security.polkit.debug = true; # Debugging.
 
   # Enable log-in with fingerprint.
@@ -96,7 +97,7 @@ in
 
   # Set your time zone.
   time.timeZone = "Asia/Manila";
-  
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
 
@@ -104,7 +105,7 @@ in
       LC_ADDRESS = "en_US.UTF-8";
       LC_IDENTIFICATION = "en_US.UTF-8";
       LC_MEASUREMENT = "en_US.UTF-8";
-      LC_MONETARY = "fil_PH";    # Filipino money formatting
+      LC_MONETARY = "fil_PH"; # Filipino money formatting
       LC_NAME = "en_US.UTF-8";
       LC_NUMERIC = "en_US.UTF-8";
       LC_PAPER = "en_US.UTF-8";
@@ -180,10 +181,10 @@ in
   };
 
   home-manager = {
-     extraSpecialArgs = { inherit inputs; };
-     users = {
-        "lubrin" = import ./home.nix;
-     };
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "lubrin" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
@@ -192,21 +193,23 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim
-     neovim
-     wget
-     git
-     htop
-     btop
-     fastfetch
-     dig
-     systemd
-     desktop-file-utils
-     usbutils
-     nixpkgs-fmt
+    vim
+    neovim
+    wget
+    git
+    htop
+    btop
+    fastfetch
+    dig
+    systemd
+    desktop-file-utils
+    usbutils
+    # Formatting and Language Server for Nix
+    nixpkgs-fmt
+    nixd
 
-     gnomeExtensions.blur-my-shell
-     gnomeExtensions.dash-to-dock
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
