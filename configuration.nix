@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 let
   # Ensure inputs is passed from specialArgs
   inputs = config.specialArgs.inputs;
@@ -25,7 +25,7 @@ in
 
   # Nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
