@@ -156,7 +156,7 @@
       cnf-hm = "/home/lubrin/scripts/hm-config.sh";
       cnf-nx = "/home/lubrin/scripts/nixos-config.sh";
       update = "sudo nixos-rebuild switch --flake /etc/nixos";
-      cd-nx = "cd /etc/nixos/"
+      cd-nx = "cd /etc/nixos/";
     };
   };
   # Let Home Manager install and manage itself.
