@@ -84,6 +84,8 @@ in
   services.fprintd.tod.enable = true;
   services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
   
+  security.polkit.debug = true; # Debugging.
+
   # Enable log-in with fingerprint.
   security.pam.services.gdm.enableGnomeKeyring = true;
   security.pam.services.gdm.fprintAuth = true;
