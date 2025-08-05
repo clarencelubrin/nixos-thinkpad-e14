@@ -103,14 +103,19 @@
     };
   };
 
-  xdg.desktopEntries.davinci-resolve = {
-    name = "DaVinci Resolve";
-    genericName = "Editor";
-    exec = "env QT_QPA_PLATFORM=xcb davinci-resolve %U";
-    icon = "resolve";
-    terminal = false;
-    categories = [ "Application" ];
-  };
+xdg.desktopEntries.davinci-resolve = {
+  name = "DaVinci Resolve";
+  genericName = "Editor";
+  comment = "Professional video editing software";
+  exec = "env QT_QPA_PLATFORM=xcb davinci-resolve %U";
+  icon = "resolve";
+  terminal = false;
+  type = "Application";
+  categories = [ "AudioVideo" "Video" "Graphics" ];
+  mimeType = [ "application/x-resolve-project" ]; # Optional, use actual MIME types if needed
+  startupNotify = true;
+  actions = { }; # You can add custom right-click actions here if needed
+};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
