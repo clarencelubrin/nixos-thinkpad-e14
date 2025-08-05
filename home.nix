@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-      inputs.nix4nvchad.homeManagerModule
-  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "lubrin";
@@ -17,23 +14,6 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
-  
-    programs.nvchad = {
-    enable = true;
-    extraPackages = with pkgs; [
-      nodePackages.bash-language-server
-      docker-compose-language-service
-      dockerfile-language-server-nodejs
-      emmet-language-server
-      nixd
-      (python3.withPackages(ps: with ps; [
-        python-lsp-server
-        flake8
-      ]))
-    ];
-    hm-activation = true;
-    backup = true;
-  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -62,8 +42,6 @@
     musescore
     muse-sounds-manager
     davinci-resolve
-    
-    nvchad
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
