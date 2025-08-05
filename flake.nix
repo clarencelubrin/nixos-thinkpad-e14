@@ -14,16 +14,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      extraSpecialArgs = { inherit system inputs; };  # <- passing inputs to the attribute set for home-manager
+      specialArgs = { inherit system inputs; };       # <- passing inputs to the attribute set for NixOS (optional)
+    in {
+    nixosConfigurations = {
+      nixos = lib.nixosSystem {
+        modules = [
+          inherit specialArgs;           # <- this will make inputs available anywhere in the NixOS configuration
+          ./configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              inherit extraSpecialArgs;  # <- this will make inputs available anywhere in the HM configuration
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.lubrin = import ./home.nix;
+            };
+          }
+        ];
+      };
     };
-  };
-}
+ }
