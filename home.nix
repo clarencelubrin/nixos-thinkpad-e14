@@ -146,7 +146,17 @@
     backup = true;
   };
 
-
+  # Aliases
+  # ~/scripts/
+  # hm-config.sh     nixos-config.sh  
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      cnf hm = "/home/lubrin/scripts/hm-config.sh";
+      cnf nx = "/home/lubrin/scripts/nixos-config.sh";
+      update = "sudo nixos-rebuild switch --flake /etc/nixos";
+    };
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
