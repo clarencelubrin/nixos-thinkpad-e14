@@ -33,7 +33,7 @@
     # Applications
     discord
     vscode
-    eclipse-java
+    eclipse
     steam
     firefox
     obsidian
