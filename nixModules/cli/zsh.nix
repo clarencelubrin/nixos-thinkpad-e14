@@ -7,7 +7,6 @@
     # environment.shells = with pkgs; [ zsh ];
     programs.zsh = {
       enable = true;
-      history.size = 10000;
       shellAliases = {
         nixos = "~/scripts/nixos.sh";
         switch = "~/scripts/nix-switch.sh";
