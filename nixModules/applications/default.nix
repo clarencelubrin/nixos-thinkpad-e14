@@ -6,6 +6,6 @@
   config = lib.mkIf config.df-app.enable {
     programs.df = {
       enable = true;
-    }
+    };
   };
 }
