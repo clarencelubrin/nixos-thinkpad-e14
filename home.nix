@@ -148,11 +148,6 @@
     hm-activation = true;
     backup = true;
   };
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
-
   # Aliases
   # ~/scripts/
   # hm-config.sh     nixos-config.sh  
