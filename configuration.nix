@@ -212,6 +212,8 @@ in
     systemd
     desktop-file-utils
     usbutils
+    p7zip
+    
     # Formatting and Language Server for Nix
     nixpkgs-fmt
     nixd
