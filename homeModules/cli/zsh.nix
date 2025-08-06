@@ -5,7 +5,6 @@
   };
   config = lib.mkIf config.zsh-cli.enable {
     # environment.shells = with pkgs; [ zsh ];
-    users.defaultUserShell = pkgs.zsh;
     programs.zsh = {
       enable = true;
       autosuggestion.enable = true;
