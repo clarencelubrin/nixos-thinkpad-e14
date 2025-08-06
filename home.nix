@@ -157,8 +157,6 @@
     config = {
       user.name = "clarencelubrin";
       user.email = "culubrin@up.edu.ph";
-      init.defaultBranch = "main";
-      pull.rebase = true;
     };
   };
 
