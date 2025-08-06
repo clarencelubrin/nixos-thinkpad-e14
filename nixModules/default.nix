@@ -12,7 +12,6 @@
     ./config/fonts.nix
     
     ./applications/applications-bundle.nix
-    ./cli/cli-bundle.nix
   ];
   networking-conf.enable =    lib.mkDefault true;
   bluetooth-conf.enable =     lib.mkDefault true;
