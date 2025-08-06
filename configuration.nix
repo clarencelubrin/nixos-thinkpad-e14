@@ -39,8 +39,15 @@ in
   steam-app.enable = true;
   zsh-cli.enable = true;
   protonvpn-app.enable = true;
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    ashmem
+    binder
+  ];
+  boot.kernelModules = [ "binder_linux" "ashmem_linux" ];
   virtualisation.waydroid.enable = true;
   virtualisation.lxd.enable = true; # Needed for container support
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
