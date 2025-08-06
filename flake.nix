@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -26,13 +26,14 @@ outputs = { self, nixpkgs, home-manager, ... }@inputs:
         system = system;
         specialArgs = specialArgs;
         modules = [
-          ./configuration.nix
+          ./host/default/configuration.nix
+          ./nixModules
           home-manager.nixosModules.home-manager {
             home-manager = {
               inherit extraSpecialArgs;
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lubrin = import ./home.nix;
+              users.lubrin = import ./host/default/home.nix;
             };
           }
         ];
