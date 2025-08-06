@@ -5,6 +5,13 @@
   };
   config = lib.mkIf config.zsh-cli.enable {
     # environment.shells = with pkgs; [ zsh ];
+    environment.systemPackages = with pkgs; [
+      thefuck
+      zsh
+      zsh-autosuggestions
+      zsh-syntax-highlighting
+      zsh-powerlevel10k
+    ];
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -33,6 +40,13 @@
           src = pkgs.zsh-powerlevel10k;
         }
       ];
+      initExtra = ''
+        # thefuck init
+        eval "$(thefuck --alias)"
+
+        # Optional: p10k config
+        [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+      '';
     };
   };
 }

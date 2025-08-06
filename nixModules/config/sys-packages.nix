@@ -29,7 +29,6 @@
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
-      thefuck
      
       gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
