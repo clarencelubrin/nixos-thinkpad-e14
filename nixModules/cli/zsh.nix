@@ -6,7 +6,6 @@
   config = lib.mkIf config.zsh-cli.enable {
     # environment.shells = with pkgs; [ zsh ];
     environment.systemPackages = with pkgs; [
-      thefuck
       zsh
       zsh-autosuggestions
       zsh-syntax-highlighting
@@ -23,7 +22,7 @@
       };
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
-        plugins = [ "git" "thefuck"  "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+        plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
         theme = "powerlevel10k/powerlevel10k";
       };
     };
