@@ -6,7 +6,7 @@
     ./config/session-variables.nix
     ./config/dconf.nix
     ./config/desktop-entries.nix
-
+    ./cli/cli-bundle.nix
   ];
   home-packages-conf.enable =      lib.mkDefault true;
   files-conf.enable =              lib.mkDefault true;
