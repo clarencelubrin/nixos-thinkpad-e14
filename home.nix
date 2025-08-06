@@ -152,14 +152,6 @@
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
-  programs.git = {
-    enable = true;
-    config = {
-      user.name = "clarencelubrin";
-      user.email = "culubrin@up.edu.ph";
-    };
-  };
-
 
   # Aliases
   # ~/scripts/
