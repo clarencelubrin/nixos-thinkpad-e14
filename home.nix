@@ -148,7 +148,7 @@
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
+  }
   programs.git = {
     enable = true;
     config = {
@@ -156,8 +156,8 @@
       user.email = "culubrin@up.edu.ph";
       init.defaultBranch = "main";
       pull.rebase = true;
-    }
-  };
+    };
+  }
 
   hm-activation = true;
     backup = true;
