@@ -5,6 +5,7 @@
   };
   config = lib.mkIf config.zsh-cli.enable {
     # environment.shells = with pkgs; [ zsh ];
+    home.packages = with pkgs; [ zsh-powerlevel10k ];
     programs.zsh = {
       enable = true;
       history.size = 10000;
@@ -28,10 +29,6 @@
       {
         name = "zsh-syntax-highlighting";
         src = pkgs.zsh-syntax-highlighting;
-      }
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
       }
     ];
       initExtra = ''
