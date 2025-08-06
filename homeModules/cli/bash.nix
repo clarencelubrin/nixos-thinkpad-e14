@@ -14,6 +14,7 @@
         switch = "~/scripts/nix-switch.sh";
         update = "sudo nixos-rebuild switch --flake /etc/nixos";
         cd-nix = "cd /etc/nixos/";
+        ff = "fastfetch";
       };
     };
   };
