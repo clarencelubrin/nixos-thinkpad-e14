@@ -5,7 +5,6 @@
   };
   config = lib.mkIf config.zsh-cli.enable {
     # environment.shells = with pkgs; [ zsh ];
-    home.packages = with pkgs; [ zsh-powerlevel10k ];
     programs.zsh = {
       enable = true;
       history.size = 10000;
@@ -20,6 +19,7 @@
         enable = true;
         plugins = [ "git" ];
         theme = "powerlevel10k/powerlevel10k";
+        customPkgs = with pkgs; [ powerlevel10k ];
       };
       plugins = [
       {
