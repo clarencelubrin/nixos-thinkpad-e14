@@ -19,7 +19,6 @@
         enable = true;
         plugins = [ "git" ];
         theme = "powerlevel10k/powerlevel10k";
-        customPkgs = with pkgs; [ powerlevel10k ];
       };
       plugins = [
       {
@@ -29,6 +28,11 @@
       {
         name = "zsh-syntax-highlighting";
         src = pkgs.zsh-syntax-highlighting;
+      }
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
       initExtra = ''
