@@ -1,9 +1,9 @@
 {pkgs, lib, config, ...}:
 {
   options = {
-    drivers-config.enable = lib.mkEnableOption "enables config";
+    drivers-conf.enable = lib.mkEnableOption "enables config";
   };
-  config = lib.mkIf config.drivers-config.enable {
+  config = lib.mkIf config.drivers-conf.enable {
     # Hardware Drivers
     services.xserver.videoDrivers = [ "modesetting" ];
     hardware.graphics = {
