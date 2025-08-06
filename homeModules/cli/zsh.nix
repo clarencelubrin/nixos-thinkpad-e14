@@ -17,7 +17,7 @@
       };
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
-        plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+        plugins = [ "git" ];
         theme = "powerlevel10k/powerlevel10k";
       };
       plugins = [
@@ -34,6 +34,9 @@
         src = pkgs.zsh-powerlevel10k;
       }
     ];
+      initExtra = ''
+        [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+      '';
     };
   };
 }
