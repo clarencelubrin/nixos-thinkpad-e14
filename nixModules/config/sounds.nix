@@ -1,29 +1,26 @@
-{pkgs, lib, config, ...}:
+{ pkgs, lib, config, ... }:
+
 {
   options = {
     sounds-conf.enable = lib.mkEnableOption "enables config";
   };
+
   config = lib.mkIf config.sounds-conf.enable {
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
+    # Enable rtkit (needed for PipeWire real-time scheduling)
     security.rtkit.enable = true;
+
+    # Enable PipeWire (modern sound server)
     services.pipewire = {
       enable = true;
-
-      # Enable sound with pipewire.
-      services.pulseaudio.enable = false;
-      security.rtkit.enable = true;
-      services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
-      };
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # Uncomment to enable JACK support
+      # jack.enable = true;
     };
+
+    # Disable PulseAudio (conflicts with PipeWire)
+    services.pulseaudio.enable = false;
   };
 }
+
