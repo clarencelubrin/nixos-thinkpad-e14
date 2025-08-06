@@ -40,6 +40,7 @@ in
   zsh-cli.enable = true;
   protonvpn-app.enable = true;
   virtualisation.waydroid.enable = true;
+  virtualisation.lxd.enable = true; # Needed for container support
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
