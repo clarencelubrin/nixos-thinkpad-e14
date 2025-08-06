@@ -13,7 +13,6 @@
   nixpkgs.config.allowUnfree = true;
   
   # Enable nvchad
-  zsh-cli.enable = true;
   nvchad-cli.enable = true;
   
   # Let Home Manager install and manage itself.
