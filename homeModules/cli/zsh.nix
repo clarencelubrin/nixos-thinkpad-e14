@@ -23,7 +23,7 @@
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
         plugins = [ "git" "thefuck" ];
-        theme = "robbyrussell";
+        theme = "powerlevel10k/powerlevel10k";
       };
     };
   };

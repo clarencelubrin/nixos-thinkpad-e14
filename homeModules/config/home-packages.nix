@@ -10,7 +10,8 @@
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
-      
+
+      zsh-powerlevel10k
       # Themes
       whitesur-icon-theme
       bibata-cursors
