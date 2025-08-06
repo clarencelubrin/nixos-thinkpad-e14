@@ -10,7 +10,7 @@
     ./config/sounds.nix
     ./config/sys-packages.nix
     ./config/fonts.nix
-    
+    ./config/env.nix    
     ./applications/applications-bundle.nix
   ];
   networking-conf.enable =    lib.mkDefault true;
@@ -22,4 +22,5 @@
   sounds-conf.enable =        lib.mkDefault true;
   sys-packages-conf.enable =  lib.mkDefault true;
   fonts-conf.enable =         lib.mkDefault true;
+  env-conf.enable =           lib.mkDefault true;
 } 
