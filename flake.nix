@@ -26,14 +26,14 @@
         system = system;
         specialArgs = specialArgs;
         modules = [
-          ./host/default/configuration.nix
+          ./configuration.nix
           ./nixModules
           home-manager.nixosModules.home-manager {
             home-manager = {
               inherit extraSpecialArgs;
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lubrin = import ./host/default/home.nix;
+              users.lubrin = import ./home.nix;
             };
           }
         ];
