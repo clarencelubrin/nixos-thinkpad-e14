@@ -213,7 +213,8 @@ in
     desktop-file-utils
     usbutils
     p7zip
-    
+    unzip
+    unrar
     # Formatting and Language Server for Nix
     nixpkgs-fmt
     nixd
