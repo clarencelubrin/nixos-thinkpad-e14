@@ -30,7 +30,7 @@
       nixpkgs-fmt
       nixd
       oh-my-zsh
-      powerlevel10k
+      zsh-powerlevel10k
 
       gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
