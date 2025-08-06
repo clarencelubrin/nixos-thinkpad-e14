@@ -26,6 +26,7 @@
         "1.1.1.1"
         "8.8.8.8"
       ];
+      bind-interfaces = true;
       listen-address = "127.0.0.1";
     };
 
@@ -35,10 +36,6 @@
     # Create resolv.conf pointing to dnsmasq
     environment.etc."resolv.conf".text = ''
       nameserver 127.0.0.1
-    '';
-    environment.etc."dnsmasq.conf".text = ''
-      bind-interfaces
-      listen-address=127.0.0.1
     '';
   };
 }
