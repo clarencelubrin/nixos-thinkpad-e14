@@ -38,7 +38,8 @@
     firefox
     obsidian
     cryptomator
-    
+    anydesk
+
     # Media
     qbittorrent
     vlc
