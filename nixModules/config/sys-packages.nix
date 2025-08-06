@@ -29,9 +29,8 @@
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
-      oh-my-zsh
-      zsh-powerlevel10k
-
+      thefuck
+     
       gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
       

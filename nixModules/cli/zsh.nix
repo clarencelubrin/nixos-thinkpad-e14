@@ -19,6 +19,20 @@
         plugins = [ "git" "thefuck"  "zsh-autosuggestions" "zsh-syntax-highlighting" ];
         theme = "powerlevel10k/powerlevel10k";
       };
+      plugins = [
+        {
+          name = "zsh-autosuggestions";
+          src = pkgs.zsh-autosuggestions;
+        }
+        {
+          name = "zsh-syntax-highlighting";
+          src = pkgs.zsh-syntax-highlighting;
+        }
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+        }
+      ];
     };
   };
 }
