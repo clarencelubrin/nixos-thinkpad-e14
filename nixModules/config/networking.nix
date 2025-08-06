@@ -4,7 +4,7 @@
     networking-conf.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.networking-conf.enable {
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "thinkpad-e14"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
