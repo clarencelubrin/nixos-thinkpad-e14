@@ -3,5 +3,6 @@
   imports = [
     ./steam.nix
     ./protonvpn.nix
+    ./git.nix
   ];
 }
