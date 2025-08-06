@@ -34,7 +34,6 @@
     discord
     vscode
     eclipses.eclipse-java
-    steam
     firefox
     obsidian
     cryptomator
@@ -146,7 +145,21 @@
         flake8
       ]))
     ];
-    hm-activation = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  }
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "clarencelubrin";
+      user.email = "culubrin@up.edu.ph";
+      init.defaultBranch = "main";
+      pull.rebase = true;
+    }
+  }
+
+  hm-activation = true;
     backup = true;
   };
 
