@@ -145,6 +145,9 @@
         flake8
       ]))
     ];
+    hm-activation = true;
+    backup = true;
+  };
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
@@ -159,9 +162,6 @@
     };
   };
 
-  hm-activation = true;
-    backup = true;
-  };
 
   # Aliases
   # ~/scripts/
