@@ -2,5 +2,6 @@
 {
   imports = [
     ./steam.nix
+    ./protonvpn.nix
   ];
 }
