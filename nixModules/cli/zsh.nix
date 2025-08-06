@@ -7,8 +7,6 @@
     # environment.shells = with pkgs; [ zsh ];
     programs.zsh = {
       enable = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
       history.size = 10000;
       shellAliases = {
         nixos = "~/scripts/nixos.sh";
@@ -19,7 +17,7 @@
       };
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
-        plugins = [ "git" "thefuck" ];
+        plugins = [ "git" "thefuck"  "zsh-autosuggestions" "zsh-syntax-highlighting" ];
         theme = "powerlevel10k/powerlevel10k";
       };
     };
