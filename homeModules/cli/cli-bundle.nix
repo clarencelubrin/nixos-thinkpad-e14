@@ -3,5 +3,6 @@
   imports = [
     ./nvchad.nix
     ./zsh.nix
+    ./git.nix
   ];
 }
