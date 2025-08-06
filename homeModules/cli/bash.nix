@@ -10,11 +10,10 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        cnf = "echo \"cnf-nix for nixos-config, cnf-home for hm-config\"";
-        cnf-home = "/home/lubrin/scripts/hm-config.sh";
-        cnf-nix = "/home/lubrin/scripts/nixos-config.sh";
+        nixos = "~/scripts/nixos.sh";
+        switch = "~/scripts/nix-switch.sh";
         update = "sudo nixos-rebuild switch --flake /etc/nixos";
-        cd-nx = "cd /etc/nixos/";
+        cd-nix = "cd /etc/nixos/";
       };
     };
   };
