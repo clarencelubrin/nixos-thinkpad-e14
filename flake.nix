@@ -37,8 +37,8 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               # users.lubrin = import ./home.nix;
-              users = {
-                modules = [
+              users.lubrin = {
+                imports = [
                   ./home.nix
                   inputs.self.outputs.homeModules.default
                 ];
