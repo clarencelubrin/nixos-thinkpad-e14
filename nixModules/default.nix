@@ -10,6 +10,8 @@
     ./config/sounds.nix
     ./config/sys-packages.nix
     ./config/fonts.nix
+    
+    ./applications/applications-bundle.nix
   ];
   networking-conf.enable =    lib.mkDefault true;
   bluetooth-conf.enable =     lib.mkDefault true;
