@@ -2,5 +2,6 @@
 {
   imports = [
     ./nvchad.nix
+    ./zsh.nix
   ];
 }
