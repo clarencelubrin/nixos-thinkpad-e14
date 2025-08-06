@@ -10,7 +10,7 @@
     services.blueman.enable = true;
 
     # Declaratively set /etc/bluetooth/main.conf
-    environment.etc."bluetooth/main.conf".text = ''
+    environment.etc."bluetooth/main.conf".text = lib.mkForce ''
       [Policy]
       AutoEnable=false
     '';
