@@ -148,7 +148,7 @@
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
-  }
+  };
   programs.git = {
     enable = true;
     config = {
@@ -157,7 +157,7 @@
       init.defaultBranch = "main";
       pull.rebase = true;
     }
-  }
+  };
 
   hm-activation = true;
     backup = true;
