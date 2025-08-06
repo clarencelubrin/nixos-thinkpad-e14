@@ -21,7 +21,10 @@
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
   in {
-    nixosConfigurations = {
+  homeModules = {
+    default = import ./homeModules/default.nix;
+  };
+  nixosConfigurations = {
       nixos = lib.nixosSystem {
         system = system;
         specialArgs = specialArgs;
@@ -33,7 +36,13 @@
               inherit extraSpecialArgs;
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.lubrin = import ./home.nix;
+              # users.lubrin = import ./home.nix;
+              users = {
+                modules = [
+                  ./home.nix
+                  inputs.self.outputs.homeModules.default
+                ];
+              };
             };
           }
         ];
