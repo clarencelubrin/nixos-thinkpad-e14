@@ -8,7 +8,6 @@
     users.defaultUserShell = pkgs.zsh;
     programs.zsh = {
       enable = true;
-      users.defaultUserShell = pkgs.zsh;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       history.size = 10000;
