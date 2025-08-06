@@ -40,13 +40,6 @@
           src = pkgs.zsh-powerlevel10k;
         }
       ];
-      initExtra = ''
-        # thefuck init
-        eval "$(thefuck --alias)"
-
-        # Optional: p10k config
-        [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-      '';
     };
   };
 }
