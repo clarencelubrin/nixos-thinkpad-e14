@@ -8,7 +8,7 @@
       enable = true;
       userName  = "Clarence Lubrin";
       userEmail = "culubrin@up.edu.ph";
-      lfs.enable = true
+      lfs.enable = true;
       aliases = {
         ci = "commit";
         co = "checkout";
