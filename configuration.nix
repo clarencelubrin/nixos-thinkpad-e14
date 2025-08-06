@@ -1,3 +1,4 @@
+# configuration.nix
 { config, pkgs, inputs, ... }:
 let
   # Ensure inputs is passed from specialArgs
