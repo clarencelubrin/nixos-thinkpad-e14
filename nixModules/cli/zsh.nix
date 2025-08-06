@@ -4,7 +4,8 @@
     zsh-cli.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.zsh-cli.enable {
-    # environment.shells = with pkgs; [ zsh ];
+    environment.shells = with pkgs; [ zsh ];
+    users.defaultUserShell = pkgs.zsh;
     environment.systemPackages = with pkgs; [
       zsh
       zsh-autosuggestions
