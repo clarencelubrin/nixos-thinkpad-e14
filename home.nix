@@ -15,6 +15,7 @@
   # Enable nvchad
   nvchad-cli.enable = true;
   zsh-cli.enable = true;  
+  git-cli.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
