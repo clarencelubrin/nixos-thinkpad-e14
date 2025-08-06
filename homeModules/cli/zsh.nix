@@ -18,7 +18,7 @@
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
         plugins = [ "git" ];
-        theme = "powerlevel10k/powerlevel10k";
+        theme = "";
       };
       plugins = [
       {
@@ -36,6 +36,7 @@
       }
     ];
       initExtra = ''
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
       '';
     };
