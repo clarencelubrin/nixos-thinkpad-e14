@@ -40,11 +40,11 @@ in
   zsh-cli.enable = true;
   protonvpn-app.enable = true;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    ashmem
-    binder
+  boot.kernelModules = [ "binder_linux" "binderfs" ];
+
+  boot.kernelParams = [
+    "binder.devices=binder,hwbinder,vndbinder"
   ];
-  boot.kernelModules = [ "binder_linux" "ashmem_linux" ];
   virtualisation.waydroid.enable = true;
   virtualisation.lxd.enable = true; # Needed for container support
 
