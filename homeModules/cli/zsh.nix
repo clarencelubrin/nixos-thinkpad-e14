@@ -9,7 +9,6 @@
     programs.zsh = {
       enable = true;
       users.defaultUserShell = pkgs.zsh;
-      enableCompletions = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       history.size = 10000;
