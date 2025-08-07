@@ -53,7 +53,7 @@
     devShells."x86_64-linux".default = pkgs.mkShell {
       packages = [ pkgs.nodejs pkgs.python3 ];
       inputsFrom = [];
-    }
+    };
   };
 
  }
