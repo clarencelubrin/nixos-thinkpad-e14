@@ -18,6 +18,7 @@
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
   in {
