@@ -10,10 +10,11 @@
       history.size = 10000;
       shellAliases = {
         nixos = "~/scripts/nixos.sh";
-        switch = "~/scripts/nix-switch.sh";
+        switch = "~/scripts/nix-commands/nix-switch.sh";
         update = "sudo nixos-rebuild switch --flake /etc/nixos";
         cd-nix = "cd /etc/nixos/";
         ff = "fastfetch";
+        mkshell = "~/scripts/shell-commands/shell-init.sh";
       };
       oh-my-zsh = { # "ohMyZsh" without Home Manager
         enable = true;
