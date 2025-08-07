@@ -23,6 +23,7 @@
       obsidian
       cryptomator
       anydesk
+      ungoogled-chromium
 
       # Media
       qbittorrent
