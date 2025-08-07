@@ -29,6 +29,7 @@
         system = system;
         specialArgs = specialArgs;
         modules = [
+          { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ./configuration.nix
           ./nixModules
           home-manager.nixosModules.home-manager {

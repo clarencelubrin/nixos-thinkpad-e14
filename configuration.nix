@@ -22,7 +22,6 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Nix settings
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
