@@ -18,7 +18,6 @@
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
   in {
@@ -49,11 +48,6 @@
           }
         ];
       };
-    };
-    # Nix Shell
-    devShells.${system}.default = pkgs.mkShell {
-      packages = [ pkgs.nodejs pkgs.python3 ];
-      inputsFrom = [];
     };
   };
 
