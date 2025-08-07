@@ -21,10 +21,10 @@
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
   in {
-  homeModules = {
-    default = import ./homeModules/default.nix;
-  };
-  nixosConfigurations = {
+    homeModules = {
+      default = import ./homeModules/default.nix;
+    };
+    nixosConfigurations = {
       nixos = lib.nixosSystem {
         system = system;
         specialArgs = specialArgs;
@@ -49,6 +49,11 @@
         ];
       };
     };
+    # Nix Shell
+    devShells."x86_64-linux".default = pkgs.mkShell {
+      packages = [ pkgs.nodejs pkgs.python3 ];
+      inputsFrom = [];
+    }
   };
 
  }
