@@ -36,7 +36,8 @@
       gcc
       cmake
       docker-compose
-      
+      devenv
+
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
