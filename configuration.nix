@@ -38,6 +38,7 @@ in
   steam-app.enable = true;
   zsh-cli.enable = true;
   protonvpn-app.enable = true;
+  docker-cli.enable = true;
   virtualisation.waydroid.enable = true;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
