@@ -26,6 +26,10 @@
       p7zip
       unzip
       unrar
+      
+      gcc
+      cmake
+
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
