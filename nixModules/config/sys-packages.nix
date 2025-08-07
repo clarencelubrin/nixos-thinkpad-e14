@@ -12,10 +12,12 @@
       ];
     };
     environment.systemPackages = with pkgs; [
+      # CLI Editors
       vim
       neovim
+
+      # Commands
       wget
-      git
       htop
       btop
       fastfetch
@@ -23,17 +25,23 @@
       systemd
       desktop-file-utils
       usbutils
+
+      # Archiving
       p7zip
       unzip
       unrar
       
+      # Development
+      git
       gcc
       cmake
-
+      docker-compose
+      
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
-     
+      
+      # Gnome Extensions
       gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
       
