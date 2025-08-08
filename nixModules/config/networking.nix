@@ -37,5 +37,13 @@
     environment.etc."resolv.conf".text = ''
       nameserver 127.0.0.1
     '';
+
+    # Firewall rules for KDE Connect / GSConnect
+    networking.firewall.allowedTCPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
+    networking.firewall.allowedUDPPortRanges = [
+      { from = 1714; to = 1764; }
+    ];
   };
 }
