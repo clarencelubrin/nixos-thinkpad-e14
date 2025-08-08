@@ -49,6 +49,7 @@
       gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
       gnomeExtensions.gsconnect
+      gnomeExtensions.just-perfection
       ];
   };
 }

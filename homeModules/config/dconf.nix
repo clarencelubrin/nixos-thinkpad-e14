@@ -26,6 +26,7 @@
             "gsconnect@andyholmes.github.io"
             "dash-to-dock@micxgx.gmail.com"
             "blur-my-shell@aunetx"
+	    "just-perfection-desktop@just-perfection"
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
             # "dash-to-dock@micxgx.gmail.com"
