@@ -33,7 +33,11 @@
             # ...
           ];
         };
-
+        "/org/gnome/shell/extensions/dash-to-dock/" = {
+          "transparency-mode" = "'DYNAMIC'";
+          "min-alpha" = "0.18";
+          "max-alpha" = "0.9";
+        };
         # Configure individual extensions
         # "org/gnome/shell/extensions/blur-my-shell" = {
         #   brightness = 0.75;
