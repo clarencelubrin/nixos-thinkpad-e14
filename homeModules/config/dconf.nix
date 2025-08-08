@@ -26,7 +26,6 @@
             # you can easily get its UUID by accessing its extensionUuid
             # field (look at the following example).
             pkgs.gnomeExtensions.gsconnect.extensionUuid
-            dash-to-dock.extensionUuid
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
             # "dash-to-dock@micxgx.gmail.com"
