@@ -33,7 +33,7 @@
             # ...
           ];
         };
-        "/org/gnome/shell/extensions/dash-to-dock/" = {
+        "org/gnome/shell/extensions/dash-to-dock/" = {
           "transparency-mode" = "'DYNAMIC'";
           "min-alpha" = "0.18";
           "max-alpha" = "0.9";
