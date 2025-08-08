@@ -4,6 +4,7 @@
     dconf-conf.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.dconf-conf.enable {
+    
     dconf = {
       enable = true;
       settings = {
@@ -22,9 +23,9 @@
             # If the extension you want to enable is packaged in nixpkgs,
             # you can easily get its UUID by accessing its extensionUuid
             # field (look at the following example).
-            pkgs.gnomeExtensions.gsconnect.extensionUuid
-            pkgs.gnomeExtensions.dash-to-dock.extensionUuid
-            pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+            "gsconnect@andyholmes.github.io"
+            "dash-to-dock@micxgx.gmail.com"
+            "blur-my-shell@aunetx"
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
             # "dash-to-dock@micxgx.gmail.com"

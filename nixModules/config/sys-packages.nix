@@ -45,6 +45,10 @@
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
-    ];
+
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.gsconnect
+      ];
   };
 }
