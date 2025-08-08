@@ -5,7 +5,7 @@
   };
   config = lib.mkIf config.bottles-app.enable {
     environment.systemPackages = with pkgs; [
-      bottles;
+      bottles
     ];
     pkgs.bottles.override {
       removeWarningPopup = true;
