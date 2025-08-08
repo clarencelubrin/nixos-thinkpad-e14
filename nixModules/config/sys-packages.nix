@@ -45,11 +45,6 @@
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
-      
-      # Gnome Extensions
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.dash-to-dock
-      
     ];
   };
 }
