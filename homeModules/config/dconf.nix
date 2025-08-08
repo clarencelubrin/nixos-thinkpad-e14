@@ -17,7 +17,7 @@
             button-layout = "appmenu:minimize,maximize,close";
         };
         "org/gnome/shell" = {
-          # disable-user-extensions = true; # Optionally disable user extensions entirely
+          disable-user-extensions = false; # Optionally disable user extensions entirely
           enabled-extensions = [
             # Put UUIDs of extensions that you want to enable here.
             # If the extension you want to enable is packaged in nixpkgs,
@@ -26,7 +26,7 @@
             "gsconnect@andyholmes.github.io"
             "dash-to-dock@micxgx.gmail.com"
             "blur-my-shell@aunetx"
-	    "just-perfection-desktop@just-perfection"
+	          "just-perfection-desktop@just-perfection"
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
             # "dash-to-dock@micxgx.gmail.com"
