@@ -4,15 +4,15 @@
     display-conf.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.display-conf.enable {
-    # XSERVER
+    # Xserver config
     services.xserver = {
       enable = true;
-      # GDM
+      # Enable gdm
       displayManager.gdm = {
         enable = true;
         wayland = true;
       };
-      # GNOME
+      # Gnome desktop environment
       desktopManager.gnome = {
         enable = true;
         extraGSettingsOverridePackages = [ pkgs.mutter ];
@@ -30,7 +30,7 @@
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland";
       MOZ_ENABLE_WAYLAND = "1";
-      # GTK_USE_PORTAL = "1";
+      GTK_USE_PORTAL = "1";
       XDG_CURRENT_DESKTOP = "GNOME";
     };
 
