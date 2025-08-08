@@ -9,6 +9,6 @@
     ];
     pkgs.bottles.override = {
       removeWarningPopup = true;
-    }
+    };
   };
 }
