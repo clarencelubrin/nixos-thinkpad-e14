@@ -50,7 +50,6 @@
       gnomeExtensions.dash-to-dock
       gnomeExtensions.gsconnect
       gnomeExtensions.just-perfection
-      gnomeExtensions.appindicator
       ];
   };
 }

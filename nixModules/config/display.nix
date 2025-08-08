@@ -4,7 +4,6 @@
     display-conf.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.display-conf.enable {
-    services.udev.packages = [ pkgs.gnome-settings-daemon ];
     # Xserver config
     services.xserver = {
       enable = true;
