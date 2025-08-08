@@ -26,17 +26,11 @@
             "gsconnect@andyholmes.github.io"
             "dash-to-dock@micxgx.gmail.com"
             "blur-my-shell@aunetx"
-	          "just-perfection-desktop@just-perfection"
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
             # "dash-to-dock@micxgx.gmail.com"
             # ...
           ];
-        };
-        "org/gnome/shell/extensions/dash-to-dock/" = {
-          "transparency-mode" = "'DYNAMIC'";
-          "min-alpha" = "0.18";
-          "max-alpha" = "0.9";
         };
         # Configure individual extensions
         # "org/gnome/shell/extensions/blur-my-shell" = {
