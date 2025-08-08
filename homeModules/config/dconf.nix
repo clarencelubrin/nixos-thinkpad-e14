@@ -4,6 +4,9 @@
     dconf-conf.enable = lib.mkEnableOption "enables config";
   };
   config = lib.mkIf config.dconf-conf.enable {
+    home.packages = {
+      pkgs.
+    }
     dconf = {
       enable = true;
       settings = {
@@ -23,10 +26,10 @@
             # you can easily get its UUID by accessing its extensionUuid
             # field (look at the following example).
             pkgs.gnomeExtensions.gsconnect.extensionUuid
-
+            dash-to-dock.extensionUuid
             # Alternatively, you can manually pass UUID as a string.
             # "blur-my-shell@aunetx"
-            "dash-to-dock@micxgx.gmail.com"
+            # "dash-to-dock@micxgx.gmail.com"
             # ...
           ];
         };
