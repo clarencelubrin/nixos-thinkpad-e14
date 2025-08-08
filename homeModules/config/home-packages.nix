@@ -24,7 +24,6 @@
       cryptomator
       anydesk
       ungoogled-chromium
-      onlyoffice-desktopeditors
       gimp3-with-plugins
       
       # Media
