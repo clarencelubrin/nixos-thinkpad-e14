@@ -38,6 +38,11 @@
       docker-compose
       devenv
 
+      # Wine 
+      wineWowPackages.stable
+      winetricks      
+      bottles
+
       # Formatting and Language Server for Nix
       nixpkgs-fmt
       nixd
