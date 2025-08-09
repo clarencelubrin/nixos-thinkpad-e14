@@ -46,8 +46,8 @@
                 nativeBuildInputs = [ prev.linuxPackages.kernel.dev ];
                 buildInputs = [ prev.linuxPackages.kernel ];
                 installPhase = ''
-                  mkdir -p $out/lib/modules/${prev.kernel.modDirVersion}/extra
-                  cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.kernel.modDirVersion}/extra
+                  mkdir -p $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
+                  cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
                 '';
               };
             })
