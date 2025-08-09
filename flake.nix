@@ -39,37 +39,22 @@
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           { nixpkgs.overlays = [
             (final: prev: {
-              linuxPackages = prev.linuxPackages.extend (lpFinal: lpPrev: {
-                i915-sriov = lpPrev.callPackage (
-                  { stdenv, lib, kernel, fetchFromGitHub ? null }:
-                  stdenv.mkDerivation {
-                    pname = "i915-sriov";
-                    version = "git";
-
-                    src = i915-sriov-src;
-
-                    nativeBuildInputs = kernel.moduleBuildDependencies;
-
-                    phases = [ "unpackPhase" "buildPhase" "installPhase" ];
-
-                    buildPhase = ''
-                      make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build \
-                        M=$PWD modules
-                    '';
-
-                    installPhase = ''
-                      mkdir -p $out/lib/modules/${kernel.modDirVersion}/extra
-                      cp *.ko $out/lib/modules/${kernel.modDirVersion}/extra/
-                    '';
-
-                    meta = with lib; {
-                      description = "Intel i915 SR-IOV kernel module";
-                      license = licenses.gpl2;
-                      platforms = platforms.linux;
-                    };
-                  }
-                ) {};
-              });
+              i915-sriov = prev.stdenv.mkDerivation {
+                pname = "i915-sriov";
+                version = "git";
+                src = inputs.i915-sriov-src;
+                nativeBuildInputs = [ prev.linuxPackages.kernel.dev ];
+                buildInputs = [ prev.linuxPackages.kernel ];
+                phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+                buildPhase = ''
+                  make -C ${prev.linuxPackages.kernel.dev}/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/build \
+                  M=$PWD modules
+                '';
+                installPhase = ''
+                  mkdir -p $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
+                  cp -r drivers/gpu/drm/i915/* $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
+                '';
+              };
             })
           ];}
           ./configuration.nix
