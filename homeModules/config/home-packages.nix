@@ -24,7 +24,6 @@
       cryptomator
       anydesk
       ungoogled-chromium
-      gimp3-with-plugins
       
       # Media
       qbittorrent
