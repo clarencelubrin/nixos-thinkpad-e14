@@ -10,6 +10,7 @@
         "i915.max_vfs=7" 
         "module_blacklist=xe"
         "kvm.ignore_msrs=1"
+        "module_blacklist=xe"
       ];    
       boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm" "kvm_intel" ];
       boot.extraModulePackages = [ pkgs.i915-sriov ];
