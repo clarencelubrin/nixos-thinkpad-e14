@@ -32,8 +32,8 @@
           pname = "i915-sriov";
           version = "git";
           src = inputs.i915-sriov-src;
-          nativeBuildInputs = [ prev.kernel.dev ];
-          buildInputs = [ prev.kernel ];
+          nativeBuildInputs = [ config.boot.kernelPackages.kernel.dev ];
+          buildInputs = [ config.boot.kernelPackages.kernel ];
           installPhase = ''
             mkdir -p $out/lib/modules/${prev.kernel.modDirVersion}/extra
             cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.kernel.modDirVersion}/extra
