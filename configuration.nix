@@ -19,7 +19,7 @@ in
   # For steam proton support.
   boot.supportedFilesystems = [ "fuse" ];
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   # Nix settings
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
