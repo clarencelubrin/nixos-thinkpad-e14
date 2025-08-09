@@ -12,6 +12,9 @@
       ];
     };
     environment.systemPackages = with pkgs; [
+      # System 
+      swtpm
+
       # CLI Editors
       vim
       neovim
