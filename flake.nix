@@ -13,6 +13,12 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Note: Using 'master' (or a branch that actually contains the module)
+    i915-sriov = {
+      url = "github:strongtz/i915-sriov-dkms/master";
+      flake = false;
+    };
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
@@ -32,6 +38,7 @@
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ./configuration.nix
           ./nixModules
+          i915-sriov.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager = {
               inherit extraSpecialArgs;
@@ -50,5 +57,4 @@
       };
     };
   };
-
  }
