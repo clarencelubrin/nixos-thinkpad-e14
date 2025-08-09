@@ -25,6 +25,24 @@
     lib = nixpkgs.lib;
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
+
+    # Package the module
+    i915-sriov = pkgs.linuxPackages.callPackage
+      ({ stdenv, lib, kernel, fetchFromGitHub }:
+        stdenv.mkDerivation {
+          pname = "i915-sriov";
+          version = "git";
+          src = i915-sriov-src;
+          nativeBuildInputs = kernel.moduleBuildDependencies;
+          makeFlags = [ "KERNELRELEASE=${kernel.modDirVersion}" "M=${placeholder "out"}/build" ];
+          buildPhase = ''
+            make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build M=$PWD
+          '';
+          installPhase = ''
+            mkdir -p $out/lib/modules/${kernel.modDirVersion}/extra
+            cp i915-sriov.ko $out/lib/modules/${kernel.modDirVersion}/extra/
+          '';
+        }) {};
   in {
     homeModules = {
       default = import ./homeModules/default.nix;
@@ -37,7 +55,6 @@
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ./configuration.nix
           ./nixModules
-          "${i915-sriov-src}/nixos"
           home-manager.nixosModules.home-manager {
             home-manager = {
               inherit extraSpecialArgs;
