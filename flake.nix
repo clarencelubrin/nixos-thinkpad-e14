@@ -15,11 +15,11 @@
     };
     # Add the i915-sriov repo
     i915-sriov-src = {
-      url = "github:strongtz/i915-sriov-dkms";
+      url = "github:strongtz/i915-sriov-dkms.git";
       flake = false; # It's not a flake
     };
   };
-  outputs = { self, nixpkgs, i915-sriov-src, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
