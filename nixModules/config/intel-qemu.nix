@@ -5,11 +5,11 @@
   };
   config = lib.mkIf config.intel-qemu-conf.enable {
       boot.kernelParams = [
-        intel_iommu=on 
-        i915.enable_guc=3 
-        i915.max_vfs=7 
-        module_blacklist=xe
-        kvm.ignore_msrs=1
+        "intel_iommu=on" 
+        "i915.enable_guc=3" 
+        "i915.max_vfs=7" 
+        "module_blacklist=xe"
+        "kvm.ignore_msrs=1"
       ];    
       boot.extraModulePackages = [ pkgs.i915-sriov ]; # hypothetical; requires you to supply/pack inherit 
       boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm" "kvm_intel" ];
