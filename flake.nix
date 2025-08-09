@@ -26,21 +26,7 @@
     lib = nixpkgs.lib;
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
-    overlays = [
-      (final: prev: {
-        i915-sriov = prev.stdenv.mkDerivation {
-          pname = "i915-sriov";
-          version = "git";
-          src = inputs.i915-sriov-src;
-          nativeBuildInputs = [ config.boot.kernelPackages.kernel.dev ];
-          buildInputs = [ config.boot.kernelPackages.kernel ];
-          installPhase = ''
-            mkdir -p $out/lib/modules/${prev.kernel.modDirVersion}/extra
-            cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.kernel.modDirVersion}/extra
-          '';
-        };
-      })
-    ];
+
   in {
     homeModules = {
       default = import ./homeModules/default.nix;
@@ -51,7 +37,21 @@
         specialArgs = specialArgs;
         modules = [
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
-          { nixpkgs.overlays = overlays; }
+          { nixpkgs.overlays = [
+            (final: prev: {
+              i915-sriov = prev.stdenv.mkDerivation {
+                pname = "i915-sriov";
+                version = "git";
+                src = inputs.i915-sriov-src;
+                nativeBuildInputs = [ config.boot.kernelPackages.kernel.dev ];
+                buildInputs = [ config.boot.kernelPackages.kernel ];
+                installPhase = ''
+                  mkdir -p $out/lib/modules/${prev.kernel.modDirVersion}/extra
+                  cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.kernel.modDirVersion}/extra
+                '';
+              };
+            })
+          ];}
           ./configuration.nix
           ./nixModules
           home-manager.nixosModules.home-manager {
