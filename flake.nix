@@ -37,6 +37,7 @@
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ./configuration.nix
           ./nixModules
+          "${i915-sriov-src}/nixos"
           home-manager.nixosModules.home-manager {
             home-manager = {
               inherit extraSpecialArgs;
