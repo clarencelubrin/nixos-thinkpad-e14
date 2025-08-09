@@ -31,7 +31,7 @@
         i915-sriov = prev.stdenv.mkDerivation {
           pname = "i915-sriov";
           version = "git";
-          src = i915-sriov-src;
+          src = inputs.i915-sriov-src;
           nativeBuildInputs = [ prev.kernel.dev ];
           buildInputs = [ prev.kernel ];
           installPhase = ''
