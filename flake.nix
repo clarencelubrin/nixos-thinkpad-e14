@@ -26,7 +26,6 @@
     lib = nixpkgs.lib;
     specialArgs = { inherit system inputs; };
     extraSpecialArgs = { inherit system inputs; };
-
   in {
     homeModules = {
       default = import ./homeModules/default.nix;
@@ -43,20 +42,20 @@
                 pname = "i915-sriov";
                 version = "git";
                 src = inputs.i915-sriov-src;
-                nativeBuildInputs = [ prev.linuxPackages.kernel.dev ];
-                buildInputs = [ prev.linuxPackages.kernel ];
+                nativeBuildInputs = [ final.linuxPackages.kernel.dev ];
+                buildInputs = [ final.linuxPackages.kernel ];
                 phases = [ "unpackPhase" "buildPhase" "installPhase" ];
                 buildPhase = ''
-                  make -C ${prev.linuxPackages.kernel.dev}/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/build \
-                  M=$PWD modules
+                  make -C ${final.linuxPackages.kernel.dev}/lib/modules/${final.linuxPackages.kernel.modDirVersion}/build \
+                    M=$PWD modules
                 '';
                 installPhase = ''
-                  mkdir -p $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
-                  cp -r drivers/gpu/drm/i915/* $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
+                  mkdir -p $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra
+                  find . -name '*.ko' -exec cp {} $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra \;
                 '';
               };
             })
-          ];}
+           ];}
           ./configuration.nix
           ./nixModules
           home-manager.nixosModules.home-manager {
