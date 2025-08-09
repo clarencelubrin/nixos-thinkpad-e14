@@ -11,6 +11,7 @@
     ./config/sys-packages.nix
     ./config/fonts.nix
     ./config/env.nix    
+    ./config/intel-qemu.nix
     ./applications/applications-bundle.nix
     ./cli/cli-bundle.nix
   ];

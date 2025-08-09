@@ -34,6 +34,8 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  intel-qemu-conf.enable = true;
+
   # Programs
   steam-app.enable = true;
   zsh-cli.enable = true;
