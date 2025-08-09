@@ -11,10 +11,9 @@
         "module_blacklist=xe"
         "kvm.ignore_msrs=1"
       ];    
-      boot.extraModulePackages = [ pkgs.i915-sriov ]; # hypothetical; requires you to supply/pack inherit 
       boot.kernelModules = [ "vfio" "vfio_pci" "vfio_iommu_type1" "kvm" "kvm_intel" ];
+      boot.extraModulePackages = [ pkgs.i915-sriov ];
       virtualisation.libvirtd.enable = true;
-
       # Enable virtualization stack
       virtualisation.libvirtd.qemuPackage = pkgs.qemu_kvm; # QEMU with KVM support
 
