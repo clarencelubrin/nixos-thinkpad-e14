@@ -15,7 +15,7 @@
     };
     
     # Note: Using 'master' (or a branch that actually contains the module)
-    i915-sriov = {
+    i915-sriov-src = {
       url = "github:strongtz/i915-sriov-dkms/master";
       flake = false;
     };
