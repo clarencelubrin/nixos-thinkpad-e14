@@ -15,10 +15,10 @@
     };
     
     # Note: Using 'master' (or a branch that actually contains the module)
-    i915-sriov-src = {
-      url = "github:strongtz/i915-sriov-dkms/master";
-      flake = false;
-    };
+    # i915-sriov-src = {
+    #   url = "github:strongtz/i915-sriov-dkms/master";
+    #   flake = false;
+    # };
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
@@ -36,26 +36,26 @@
         specialArgs = specialArgs;
         modules = [
           { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
-          { nixpkgs.overlays = [
-            (final: prev: {
-              i915-sriov = prev.stdenv.mkDerivation {
-                pname = "i915-sriov";
-                version = "git";
-                src = inputs.i915-sriov-src;
-                nativeBuildInputs = [ final.linuxPackages.kernel.dev ];
-                buildInputs = [ final.linuxPackages.kernel ];
-                phases = [ "unpackPhase" "buildPhase" "installPhase" ];
-                buildPhase = ''
-                  make -C ${final.linuxPackages.kernel.dev}/lib/modules/${final.linuxPackages.kernel.modDirVersion}/build \
-                    M=$PWD modules
-                '';
-                installPhase = ''
-                  mkdir -p $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra
-                  find . -name '*.ko' -exec cp {} $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra \;
-                '';
-              };
-            })
-           ];}
+          # { nixpkgs.overlays = [
+          #   (final: prev: {
+          #     i915-sriov = prev.stdenv.mkDerivation {
+          #       pname = "i915-sriov";
+          #       version = "git";
+          #       src = inputs.i915-sriov-src;
+          #       nativeBuildInputs = [ final.linuxPackages.kernel.dev ];
+          #       buildInputs = [ final.linuxPackages.kernel ];
+          #       phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+          #       buildPhase = ''
+          #         make -C ${final.linuxPackages.kernel.dev}/lib/modules/${final.linuxPackages.kernel.modDirVersion}/build \
+          #           M=$PWD modules
+          #       '';
+          #       installPhase = ''
+          #         mkdir -p $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra
+          #         find . -name '*.ko' -exec cp {} $out/lib/modules/${final.linuxPackages.kernel.modDirVersion}/extra \;
+          #       '';
+          #     };
+          #   })
+          #  ];}
           ./configuration.nix
           ./nixModules
           home-manager.nixosModules.home-manager {
