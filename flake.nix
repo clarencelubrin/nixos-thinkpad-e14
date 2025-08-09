@@ -45,6 +45,11 @@
                 src = inputs.i915-sriov-src;
                 nativeBuildInputs = [ prev.linuxPackages.kernel.dev ];
                 buildInputs = [ prev.linuxPackages.kernel ];
+                phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+                buildPhase = ''
+                  make -C ${prev.linuxPackages.kernel.dev}/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/build \
+                  M=$PWD modules
+                '';
                 installPhase = ''
                   mkdir -p $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
                   cp drivers/gpu/drm/i915/* $out/lib/modules/${prev.linuxPackages.kernel.modDirVersion}/extra
