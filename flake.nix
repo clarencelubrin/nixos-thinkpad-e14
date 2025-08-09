@@ -13,6 +13,11 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Add the i915-sriov repo
+    i915-sriov-src = {
+      url = "github:strongtz/i915-sriov-dkms";
+      flake = false; # It's not a flake
+    };
   };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
